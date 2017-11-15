@@ -1,0 +1,8 @@
+﻿{
+  "dependencies": {
+    "Xamarin.Forms": "3.0.0.201-gtk"
+  },
+  "frameworks": {
+    ".NETPortable,Version=v4.5,Profile=Profile111": {}
+  }
+}
