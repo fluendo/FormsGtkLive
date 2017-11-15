@@ -1,5 +1,4 @@
-﻿using System.IO;
-using FormsGtkLive.ViewModels;
+﻿using FormsGtkLive.ViewModels;
 using Xamarin.Forms;
 using Plugin.FilePicker;
 using Gtk;
@@ -29,18 +28,8 @@ namespace FormsGtkLive.Views
             }
 
             EditorViewModel vm = (EditorViewModel)BindingContext;
-            string selectedXAML = listView.SelectedItem.ToString();
-
-
-            // Read XAML file content
-            var xaml = string.Empty;
-            using (var fileStream = new FileStream(vm.XAMLFiles[selectedXAML], FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-            using (var textReader = new StreamReader(fileStream))
-            {
-                xaml = textReader.ReadToEnd();
-            }
-            vm.LiveXaml = xaml;
-            XAMLEditor.Text = xaml;
+            vm.SelectedXaml = (string)listView.SelectedItem;
+            XAMLEditor.Text = vm.LiveXaml;
         }
 
         void LoadButton_Clicked(object sender, System.EventArgs e)

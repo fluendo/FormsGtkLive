@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -33,6 +34,20 @@ namespace FormsGtkLive.ViewModels
         }
 
         public ObservableCollection<AssemblyViewModel> AssembliesList { get; set; }
+        string selectedXaml;
+
+        public string SelectedXaml
+        {
+            get
+            {
+                return selectedXaml;
+            }
+            set
+            {
+                selectedXaml = value;
+                Reload();
+            }
+        }
 
         public Dictionary<string, string> XAMLFiles
         {
@@ -80,6 +95,17 @@ namespace FormsGtkLive.ViewModels
 
         private void Reload ()
         {
+            string selectedXAML = SelectedXaml;
+
+            // Read XAML file content
+            var xaml = string.Empty;
+            using (var fileStream = new FileStream(XAMLFiles[selectedXAML], FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            using (var textReader = new StreamReader(fileStream))
+            {
+                xaml = textReader.ReadToEnd();
+            }
+            LiveXaml = xaml;
+            //XAMLEditor.Text = xaml;
             PreviewXaml(LiveXaml);
         }
     }

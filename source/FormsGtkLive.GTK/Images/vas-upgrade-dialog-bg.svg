@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="480px" height="109px" viewBox="0 0 480 109" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>dialog-bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Dialogs+Alerts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="UpgradePlanDialog" transform="translate(0.000000, -291.000000)">
+            <g id="dialog-bg" transform="translate(0.000000, 291.000000)">
+                <rect id="Rectangle-2" fill="#252627" x="0" y="0" width="480" height="109"></rect>
+                <rect id="Rectangle" fill="#4A4A4A" x="0" y="20" width="480" height="90"></rect>
+                <polygon id="Rectangle-5" fill="#252627" transform="translate(7.500000, 26.500000) scale(-1, 1) rotate(-90.000000) translate(-7.500000, -26.500000) " points="15 19 15 34 0 34"></polygon>
+                <polygon id="Rectangle-5-Copy" fill="#6E921C" points="480 19 480 109 390 109"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
