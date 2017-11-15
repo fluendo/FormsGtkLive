@@ -61,9 +61,6 @@
       <DependentUpon>LiveView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AssemblyViewModel.cs" />
-    <Compile Include="Views\MyView.xaml.cs">
-      <DependentUpon>MyView.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
