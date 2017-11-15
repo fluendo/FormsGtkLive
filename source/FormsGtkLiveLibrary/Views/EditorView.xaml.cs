@@ -1,6 +1,10 @@
 ﻿using System.IO;
 using FormsGtkLive.ViewModels;
 using Xamarin.Forms;
+using Plugin.FilePicker;
+using Gtk;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace FormsGtkLive.Views
 {
@@ -12,6 +16,7 @@ namespace FormsGtkLive.Views
 
             BindingContext = new EditorViewModel();
             XMLList.ItemSelected += XMLList_ItemSelected;
+            LoadButton.Clicked += LoadButton_Clicked;
         }
 
         void XMLList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -36,6 +41,33 @@ namespace FormsGtkLive.Views
             }
             vm.LiveXaml = xaml;
             XAMLEditor.Text = xaml;
+        }
+
+        void LoadButton_Clicked(object sender, System.EventArgs e)
+        {
+            FileChooserDialog fChooser;
+            Window toplevel = null;
+            List<string> path;
+            EditorViewModel vm = (EditorViewModel)BindingContext;
+
+            fChooser = new FileChooserDialog("Assembly chooser", toplevel, FileChooserAction.Open,
+                                             "gtk-cancel", ResponseType.Cancel,
+                                             "gtk-open", ResponseType.Accept);
+
+            fChooser.SelectMultiple = false;
+
+            if (fChooser.Run() != (int)ResponseType.Accept)
+            {
+                path = new List<string>();
+            }
+            else
+            {
+                path = new List<string>(fChooser.Filenames);
+                Assembly ass = Assembly.LoadFrom(path[0]);
+                vm.AssembliesList.Add(new AssemblyViewModel() { Assembly = ass });
+            }
+
+            fChooser.Destroy();
         }
     }
 }

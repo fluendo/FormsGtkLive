@@ -16,9 +16,11 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
                 <ColumnDefinition />
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
+            <Button Text="Load assembly" FontSize="20" Grid.Column="0" x:Name="LoadButton"/>
             <ListView ItemsSource="{Binding AssembliesList}"
-                Grid.Column="0">
+                Grid.Column="1">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -32,7 +34,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <ListView ItemsSource="{Binding XAMLFiles.Keys}"
-                Grid.Column="1"
+                Grid.Column="2"
                 x:Name="XMLList">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -47,11 +49,11 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Editor
-                Grid.Column="2"
+                Grid.Column="3"
                 Text="{Binding LiveXaml}"
                 x:Name="XAMLEditor"/>
             <ContentView
-                Grid.Column="3"
+                Grid.Column="4"
                 Content="{Binding Preview}" />
         </Grid>
     </ContentPage.Content>
