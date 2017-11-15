@@ -48,7 +48,8 @@
             </ListView>
             <Editor
                 Grid.Column="2"
-                Text="{Binding LiveXaml}"/>
+                Text="{Binding LiveXaml}"
+                x:Name="XAMLEditor"/>
             <ContentView
                 Grid.Column="3"
                 Content="{Binding Preview}" />
