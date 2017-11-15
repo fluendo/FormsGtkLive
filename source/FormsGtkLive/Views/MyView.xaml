@@ -1,0 +1,16 @@
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FormsGtkLive.Views.MyView">
+    <StackLayout Orientation="Vertical">
+        <Label x:Name="Header" Text="Header1"/>
+        <Label x:Name="FeaturesHeader" Text="FeaturesHeader"/>
+    <ListView ItemsSource="{Binding Features}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Label Text="{Binding}"/>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>            
+    </ListView>
+    <Button Text="UPGRADE"/>
+    </StackLayout>
+</ContentView>

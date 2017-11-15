@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -9,6 +13,14 @@ namespace FormsGtkLive.ViewModels
     {
         private string _liveXaml;
         private View _preview;
+        private string xmlSelected;
+
+        public EditorViewModel()
+        {
+            Assembly ass = typeof(EditorViewModel).GetTypeInfo().Assembly;
+            AssembliesList = new ObservableCollection<AssemblyViewModel>();
+            AssembliesList.Add(new AssemblyViewModel() { Assembly = ass });
+        }
 
         public string LiveXaml
         {
@@ -17,6 +29,16 @@ namespace FormsGtkLive.ViewModels
             {
                 _liveXaml = value;
                 PreviewXaml(_liveXaml);
+            }
+        }
+
+        public ObservableCollection<AssemblyViewModel> AssembliesList { get; set; }
+
+        public Dictionary<string, string> XAMLFiles
+        {
+            get
+            {
+                return AssembliesList[0].XMLFiles;
             }
         }
 

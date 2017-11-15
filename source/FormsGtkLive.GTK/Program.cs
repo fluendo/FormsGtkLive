@@ -21,7 +21,7 @@ namespace FormsGtkLive.GTK
             Gtk.Application.Run();
         }
 
-            public static void LivelXaml(Application application)
+        public static void LivelXaml(Application application)
         {
             var directory = Directory.GetCurrentDirectory();
 
