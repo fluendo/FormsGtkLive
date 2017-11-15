@@ -7,7 +7,7 @@ namespace FormsGtkLive.GTK
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main (string[] args)
         {
             Gtk.Application.Init();
             Forms.Init();
@@ -21,7 +21,7 @@ namespace FormsGtkLive.GTK
             Gtk.Application.Run();
         }
 
-        public static void LivelXaml(Application application)
+        public static void LivelXaml (Application application)
         {
             var directory = Directory.GetCurrentDirectory();
 
@@ -62,7 +62,9 @@ namespace FormsGtkLive.GTK
                 var page = Live.GetPage(application.MainPage, className);
 
                 if (page == null)
+                {
                     return;
+                }
 
                 try
                 {

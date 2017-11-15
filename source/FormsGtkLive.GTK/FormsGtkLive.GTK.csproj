@@ -107,12 +107,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FormsGtkLive\FormsGtkLive.csproj">
-      <Project>{c89057a7-f984-4d0e-ac98-00bbb0948a21}</Project>
-      <Name>FormsGtkLive</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="Images\reload.png">
@@ -121,6 +115,12 @@
     <Content Include="Images\xaml.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FormsGtkLiveLibrary\FormsGtkLiveLibrary.csproj">
+      <Project>{587FA1CD-1A5C-431E-8A61-ECA5F7BBB1F4}</Project>
+      <Name>FormsGtkLiveLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.3.0.0.201-gtk\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.3.0.0.201-gtk\build\netstandard1.0\Xamarin.Forms.targets')" />

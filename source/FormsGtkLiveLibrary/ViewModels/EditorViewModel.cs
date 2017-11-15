@@ -54,7 +54,7 @@ namespace FormsGtkLive.ViewModels
 
         public ICommand ReloadCommand => new Command(Reload);
 
-        private async void PreviewXaml(string xaml)
+        private async void PreviewXaml (string xaml)
         {
             var contentPage = new ContentPage();
 
@@ -78,7 +78,7 @@ namespace FormsGtkLive.ViewModels
             Preview = contentPage.Content;
         }
 
-        private void Reload()
+        private void Reload ()
         {
             PreviewXaml(LiveXaml);
         }

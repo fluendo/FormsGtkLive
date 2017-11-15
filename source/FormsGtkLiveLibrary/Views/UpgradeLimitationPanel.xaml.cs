@@ -4,9 +4,9 @@ using Xamarin.Forms;
 
 namespace FormsGtkLive.Views
 {
-    public partial class MyView : ContentView
+    public partial class UpgradeLimitationPanel : ContentView
     {
-        public MyView()
+        public UpgradeLimitationPanel ()
         {
             InitializeComponent();
         }

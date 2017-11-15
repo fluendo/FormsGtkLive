@@ -12,7 +12,7 @@ namespace FormsGtkLive
     {
         public static readonly Regex Regex = new Regex("x:Class=\"([^\"]+)\"");
 
-        public static Page GetPage(Page page, string fullTypeName)
+        public static Page GetPage (Page page, string fullTypeName)
         {
             if (page == null)
                 return null;
@@ -23,7 +23,7 @@ namespace FormsGtkLive
             return null;
         }
 
-        public static Task UpdatePageFromXamlAsync(Page page, string xaml)
+        public static Task UpdatePageFromXamlAsync (Page page, string xaml)
         {
             var taskCompletionSource = new TaskCompletionSource<Page>();
 
@@ -52,7 +52,7 @@ namespace FormsGtkLive
             return taskCompletionSource.Task;
         }
 
-        public static string GetXamlException(Exception exception)
+        public static string GetXamlException (Exception exception)
         {
             XNamespace xmlns = "http://xamarin.com/schemas/2014/forms";
 
@@ -76,7 +76,7 @@ namespace FormsGtkLive
             return errorPage;
         }
 
-        public static void LoadXaml(BindableObject view, string xaml)
+        public static void LoadXaml (BindableObject view, string xaml)
         {
             var xamlAssembly = Assembly.Load(new AssemblyName("Xamarin.Forms.Xaml"));
             var xamlLoader = xamlAssembly.GetType("Xamarin.Forms.Xaml.XamlLoader");

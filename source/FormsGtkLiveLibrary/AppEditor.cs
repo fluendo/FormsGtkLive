@@ -5,7 +5,7 @@ namespace FormsGtkLive
 {
     public class AppEditor : Application
     {
-        public AppEditor()
+        public AppEditor ()
         {
             MainPage = new CustomNavigationPage(new EditorView());
         }
